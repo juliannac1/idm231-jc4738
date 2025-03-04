@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initl-scale=1.0">
+        <title> AI friend generator </title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <main>
+            <div class="main">
+                <div class="left" style="display: grid;">
+                    <div id="row-1">
+                        
+                        <button class="icon-button" id="boom">
+                            <img src="characters/boom.capricornus.png"  alt="Boom">
+                        </button>
+                        <button class="icon-button" id="chunk">
+                            <img src="characters/chunk.aquarius.png"  alt="Chunk">
+                        </button>
+                        <button class="icon-button" id="mallow">
+                            <img src="characters/mallow.pisces.png"  alt="Mallow">
+                        </button>
+                        <button class="icon-button" id="margo">
+                            <img src="characters/margo.aries.png" alt="Margo">
+                        </button>
+                    </div>
+                    
+                    <div id="row-2">
+                        <hr>
+                        <button class="icon-button" id="charlee">
+                            <img src="characters/charlee.taurus.png"  alt="Charlee">
+                        </button>
+                        <button class="icon-button" id="neon">
+                            <img src="characters/neon.gemini.png"  alt="Neon">
+                        </button>
+                        <button class="icon-button" id="sparkle">
+                            <img src="characters/sparkle.cancer.png"  alt="Sparkle">
+                        </button>
+                        <button class="icon-button" id="taglo">
+                            <img src="characters/taglo.leo.png"  alt="Taglo">
+                        </button>
+                    </div>
+                    <hr class="red-line">
+                    <div id="row-3">
+                        <button class="icon-button" id="blup">
+                            <img src="characters/blup.virgo.png"  alt="Blup">
+                        </button>
+                        <button class="icon-button" id="cider">
+                            <img src="characters/cider.libra.png"  alt="Cider">
+                        </button>
+                        <button class="icon-button" id="pumpkin">
+                            <img src="characters/pumpkin.scorpio.png" alt="Pumpkin">
+                        </button>
+                        <button class="icon-button" id="ranch">
+                            <img src="characters/ranch.sag.png" alt="Ranch">
+                        </button>
+                       
+                    </div>
+                    
+                </div>
+                <div class="right" style="display: block;">
+                    <div>
+                        <!--pop up button add the image-->
+                       <img class="popup" onclick="helpMe()" src="" >
+                    </div> 
+                    <div class="dob">
+                        <section>
+                            <form class="birthday-form">
+                                <div class="control">
+                                    <label for="birthday"> Birthday: <label>
+                                        <input type="date" name="birthday" required>
+                                    </label>
+                                </div>
+                                <ul class = "errors" hidden></ul>
+                            </form>
+                        </section>
+                    </div>
+                        <div id="blindbox-detail">
+                            <img id="icon-img" src="" alt="">
+                            <h2 id=""></h2>
+                            <p id="intro"></p>
+                            <p id="description"></p>
+                        </div>
+                    </div>
+                </div>
+        </main>
+        <script src="main.js"></script>
+        
+    </body>
+</html>

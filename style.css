@@ -1,0 +1,40 @@
+.main {
+    display: flex;
+    gap: 20px; /* Adds spacing between left and right */
+    align-items: flex-start; /* Aligns both columns at the top */
+}
+body{
+
+    background-image: url('images/wall.jpg'); 
+    background-size: cover; /* Makes the image cover the entire screen */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; 
+}
+#row-1 {
+    border-bottom: 20px solid rgb(207, 5, 5); /* Creates a red line under row 1 */
+   
+}
+button{
+    border: none;
+    background: none;
+}
+
+img{
+    height: 150px;
+    width: auto;
+    margin : auto;
+}
+
+.left{
+    max-width: 60% ;
+    text-align: center;
+    display: grid;
+    grid-template-rows: auto auto auto; /* Ensures a structured grid */
+    width: 60%;
+}
+
+.right{
+    text-align: center;
+    display: block;
+    flex: 1; /* Allows it to adjust dynamically */
+}
