@@ -52,3 +52,129 @@ function findBday(month, day) {
     }
     showIconDetail(icon)
 };
+
+function showIconDetail(dish) {
+    const icon = iconData.filter(
+        item => item.name === icon
+    )[0]
+    console.log(icon)
+    iconImage.src = icon.image;
+    iconName.innerText = icon.name;
+    Intro.innerText = icon.intro;
+    Descrip.innerText = icon.description;
+
+    playsound(); //add sound
+}
+
+function showClickedIcon(button) {
+    const icon = button.id;
+    const mainIcon = iconData.filter(
+        item => item.id === icon
+    )[0]
+    console.log(mainicon)
+    dishImage.src = mainIcon.image;
+    dishName.innerText = mainIcon.name;
+    dishIntro.innerText = mainIcon.intro;
+    dishDescrip.innerText = mainIcon.description;
+
+    playsound(mainDish.sound);
+}
+
+const iconData = [
+    {
+        name: "Boom",
+        intro: "Capricorn",
+        description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
+        image: 'characters/boom.png',
+        sound: 'sounds/boom.wav',
+        id: "boom",
+    },
+    {
+        name: "Chunk",
+        intro: "Capricorn",
+        description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
+        image: 'characters/chunk.png',
+        sound: 'sounds/chunk.wav',
+        id: "chunk",
+    },
+    {
+        name: "Mallow",
+        intro: "Capricorn",
+        description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
+        image: 'characters/mallow.png',
+        sound: 'sounds/mallow.wav',
+        id: "mallow",
+    },
+    {
+        name: "Margo",
+        intro: "Capricorn",
+        description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
+        image: 'characters/margo.png',
+        sound: 'sounds/margo.wav',
+        id: "margo",
+    },
+    {
+        name: "Charlee",
+        intro: "Capricorn",
+        description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
+        image: 'characters/charlee.png',
+        sound: 'sounds/charlee.wav',
+        id: "charlee",
+    },
+    {
+        name: "Neon",
+        intro: "Capricorn",
+        description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
+        image: 'characters/neon.png',
+        sound: 'sounds/neon.wav',
+        id: "neon",
+    },
+    {
+        name: "Sparkle",
+        intro: "Capricorn",
+        description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
+        image: 'characters/sparkle.png',
+        sound: 'sounds/sparkle.wav',
+        id: "sparkle",
+    },
+    {
+        name: "Taglo",
+        intro: "Capricorn",
+        description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
+        image: 'characters/taglo.png',
+        sound: 'sounds/taglo.wav',
+        id: "taglo",
+    },
+    {
+        name: "Glup",
+        intro: "Capricorn",
+        description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
+        image: 'characters/glup.png',
+        sound: 'sounds/glup.wav',
+        id: "glup",
+    },
+    {
+        name: "Cider",
+        intro: "Capricorn",
+        description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
+        image: 'characters/cider.png',
+        sound: 'sounds/cider.wav',
+        id: "cider",
+    },
+    {
+        name: "Pumpkin",
+        intro: "Capricorn",
+        description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
+        image: 'characters/pumpkin.png',
+        sound: 'sounds/pumpkin.wav',
+        id: "pumpkin",
+    },
+    {
+        name: "Ranch",
+        intro: "Capricorn",
+        description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
+        image: 'characters/ranch.png',
+        sound: 'sounds/ranch.wav',
+        id: "ranch",
+    }];
+    

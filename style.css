@@ -1,10 +1,11 @@
 .main {
     display: flex;
     gap: 20px; /* Adds spacing between left and right */
-    align-items: flex-start; /* Aligns both columns at the top */
+    align-items: center; /* Aligns both columns at the top */
+    margin: 5%;
 }
-body{
 
+body{
     background-image: url('images/wall.jpg'); 
     background-size: cover; /* Makes the image cover the entire screen */
     background-position: center; /* Centers the image */
@@ -29,7 +30,7 @@ img{
     max-width: 60% ;
     text-align: center;
     display: grid;
-    grid-template-rows: auto auto auto; /* Ensures a structured grid */
+  
     width: 60%;
 }
 
@@ -37,4 +38,38 @@ img{
     text-align: center;
     display: block;
     flex: 1; /* Allows it to adjust dynamically */
+}
+
+#icon-detail {
+    margin: 0 70px;
+    /* width: auto; */
+}
+
+#detail-box {
+    background-color: var(--light-red);
+    border-radius: 170px 170px 30px 30px;
+    width: 32rem;
+    padding: 4rem 2rem 1rem 2rem;
+    margin-top: -80px;
+}
+
+
+#icon-img {
+    width: auto;
+    max-height: 250px;
+    display: block;
+    margin: auto;
+}
+
+#intro {
+    font-family: ;
+    line-height: 130%;
+    margin: 0 3rem;
+    text-align: center;
+}
+
+#description {
+    font-size: 1.2rem;
+    font-family: ;
+    line-height: 130%;
 }
