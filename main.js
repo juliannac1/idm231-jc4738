@@ -5,7 +5,7 @@ let day = "";
 const iconImage = document.getElementById("icon_img");
 const iconName = document.getElementById("icon_name");
 const iconIntro = document.getElementById("icon_intro");
-const iconDescription = document.getElementById("description");
+const iconDescrip = document.getElementById("description");
 
 function enterBday(event) {
     event.preventDefault();
@@ -53,7 +53,7 @@ function findBday(month, day) {
     showIconDetail(icon)
 };
 
-function showIconDetail(dish) {
+function showIconDetail(icon) {
     const icon = iconData.filter(
         item => item.name === icon
     )[0]
@@ -64,6 +64,13 @@ function showIconDetail(dish) {
     Descrip.innerText = icon.description;
 
     playsound(); //add sound
+}
+const iconbutton = document.getElementsByClassName('icon-button');
+
+for (const button of iconButton) {
+    button.addEventListener('click', () => {
+        showClickedIcon(button); 
+    }, false);
 }
 
 function showClickedIcon(button) {
@@ -77,12 +84,12 @@ function showClickedIcon(button) {
     dishIntro.innerText = mainIcon.intro;
     dishDescrip.innerText = mainIcon.description;
 
-    playsound(mainDish.sound);
+    playsound(mainIcon.sound);
 }
 
 const iconData = [
     {
-        name: "Boom",
+        name: 'Boom',
         intro: "Capricorn",
         description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
         image: 'characters/boom.png',
@@ -90,7 +97,7 @@ const iconData = [
         id: "boom",
     },
     {
-        name: "Chunk",
+        name: 'Chunk',
         intro: "Capricorn",
         description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
         image: 'characters/chunk.png',
@@ -178,3 +185,15 @@ const iconData = [
         id: "ranch",
     }];
     
+
+    const helpButton = document.getElementById('help-button');
+
+if (helpButton) {
+    helpButton.addEventListener('click', () => {
+        iconImage.src = '';//add image of icon
+        iconName.innerText = 'Instruction';
+        iconName.style.paddingTop = '1.2rem';
+        iconIntro.innerText = 'Welcome to ByteBuds Generator!';
+        description.innerText = 'Enter your birthday above to discover which icon is your bytebuddy!';
+    }, false);
+}
