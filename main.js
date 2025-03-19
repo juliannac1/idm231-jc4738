@@ -186,14 +186,15 @@ const iconData = [
     }];
     
 
+
     const helpButton = document.getElementById('help-button');
 
-if (helpButton) {
-    helpButton.addEventListener('click', () => {
-        iconImage.src = '';//add image of icon
-        iconName.innerText = 'Instruction';
-        iconName.style.paddingTop = '1.2rem';
-        iconIntro.innerText = 'Welcome to ByteBuds Generator!';
-        description.innerText = 'Enter your birthday above to discover which icon is your bytebuddy!';
-    }, false);
-}
+    if (helpButton) {
+        helpButton.addEventListener('click', () => {
+            iconImage.src = 'image-asset/icon-mainicon.png';
+            iconName.innerText = 'Instruction';
+            icon.style.paddingTop = '1.2rem';
+            Intro.innerText = 'Welcome to the icon Generator!';
+            descrip.innerText = 'Enter your birthday above to discover whichicon is your new friend! You can also click on buttons on the side to read about other icons and corresponding characters.';
+        }, false);
+    }
