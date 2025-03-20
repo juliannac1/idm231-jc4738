@@ -108,12 +108,13 @@ img{
 
 
 #detail-box {
-    background-color: rgb(222, 210, 201);
+    background-color: rgb(240, 219, 219);
     border-radius: 170px 170px 30px 30px;
     width: 32rem;
     padding: 4rem 2rem 1rem 2rem;
     margin-top: -80px;
     z-index: 0;
+    min-height: 250px;
 }
 
 

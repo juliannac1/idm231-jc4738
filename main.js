@@ -104,7 +104,7 @@ const helpButton = document.getElementById('help-button');
 
 if (helpButton) {
     helpButton.addEventListener('click', () => {
-        iconImage.src = 'image-asset/icon-maindish.png';//change this part
+        iconImage.src = 'images/icon.png';
         iconName.innerText = 'Instruction';
         iconName.style.paddingTop = '1.2rem';
         iconIntro.innerText = 'Welcome to ByteBuds!';
