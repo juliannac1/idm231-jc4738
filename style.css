@@ -10,7 +10,7 @@ h1{
     text-align: center;
 }
 
-#blindbox-detail {
+#icon-detail {
     display: flex;
     flex-direction: column; /* Stacks image and detail-box */
     align-items: center; /* Centers content horizontally */
@@ -34,29 +34,9 @@ h1{
 #bday-input {
     background-color: white;
     color: #c2aeae;
-    border: 3px solid yellow;
+    border: 3px solid #d02718;
 }
 
-#go-button {
-    background-color: rgb(212, 6, 6);
-    color: rgb(23, 185, 112);
-    border: 0;
-    transition: background-color .3s ease-out 0s;
-}
-
-#go-button:hover {
-    background-color: rgb(210, 3, 3);
-}
-
-#bday-input, #go-button {
-    border-radius: 30px;
-    font-family: 'Poppins', san-serif;
-    padding: .25rem 1.5rem;
-}
-
-#bday-input p, #go-button p {
-    margin: .5rem 0;
-}
 
 .main {
     display: flex;
@@ -92,10 +72,12 @@ button{
     border: none;
     background: none;
     z-index: 10;
+    all: unset;
+    cursor: pointer;
 }
 
 img{
-    height: 180px;
+    height: 140px;
     width: auto;
     margin: none;
     padding: none;
@@ -110,7 +92,6 @@ img{
 
 .right {
     flex: 1; /* Takes up 1 part of the space */
-    margin: 20px;
     padding: 20px;
     border-style: outset;
     border-color: #c2aeae;
@@ -122,20 +103,15 @@ img{
 
 #icon-detail {
     margin: 0px 70px;
-    /* width: auto; */
 }
 
-button {
-    all: unset;
-    cursor: pointer;
-}
 
 #detail-box {
     background-color: rgb(222, 210, 201);
-    border-radius: 30px;
+    border-radius: 170px 170px 30px 30px;
     width: 32rem;
-    height: fit-content;
     padding: 4rem 2rem 1rem 2rem;
+    margin-top: -80px;
     z-index: 0;
 }
 
@@ -155,7 +131,8 @@ button {
 }
 
 
-#intro {
+
+#icon-intro {
     font-family: 'Poppins', sans-serif;
     line-height: 130%;
     margin: 0 3rem;
@@ -167,6 +144,7 @@ button {
     font-family: 'Poppins', sans-serif;
     line-height: 130%;
 }
+
 
 #help-button-img {
     width: 50px;

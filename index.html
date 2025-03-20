@@ -70,19 +70,16 @@
                     <div class="dob">
                         <section>
                             <form class="birthday-form">
-                                <div class="control">
-                                    <label for="birthday"> Birthday: <label>
-                                        <input type="date" name="birthday" required>
-                                    </label>
-                                </div>
+                                <input id="bday-input" type="date">
+                                <button type="submit" id="submit-button"> ➡️ </button>
                                 <ul class = "errors" hidden></ul>
                             </form>
                         </section>
-                    <div id="blindbox-detail">
+                    <div id="icon-detail">
                          <img id="icon-img" src="images/icon.png" alt="your icon"> 
                         <div id="detail-box">
                             <h2 id="icon-name"></h2>
-                            <p id="intro"></p>
+                            <p id="icon-intro"></p>
                             <p id="description"></p>
                         </div>
                     </div>
@@ -90,25 +87,14 @@
             </div>
         
         </div>
-        <div id="overlayContainer">
-            <div class="overlay">
-                <div class="text">
-                    <h2>Instructions</h2>
-                    <div class="close">
-                        <h1>X</h1>
-                    </div>
-                    <div class="text">
-                        <p>Enter your birthday above to find out which ByteBud represents you! You can also explore the buttons on the side to learn about other Buddies and their descriptions.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <section>
             <p>
                 Byte buddies are uniquely crafted by Julianna with the use of LumaAI.
             </p>
-            <audio id="audioplayer"></audio>
+            
         </section>
+        <audio id="audioplayer"></audio>
         </main>
         <script src="main.js"></script>
         
