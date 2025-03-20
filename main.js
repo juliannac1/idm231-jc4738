@@ -33,49 +33,74 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-<input type="date" id="bday-input" required></input>
-
-function findBday(month, day) {
-  if ((month == 3 && day >= 21) || (month == 4 && day <= 20)) {
-      icon = "margo";
-  } else if ((month == 4 && day >= 21) || (month == 5 && day <= 20)) {
-      icon = "charlee";
-  } else if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) {
-      icon = "neon";
-  } else if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) {
-      icon = "sparkle";
-  } else if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) {
-      icon = "taglo";
-  } else if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) {
-      icon = "blup";
-  } else if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) {
-      icon = "cider";
-  } else if ((month == 10 && day >= 23) || (month == 11 && day <= 22)) {
-      icon = "pumpkin";
-  } else if ((month == 11 && day >= 23) || (month == 12 && day <= 21)) {
-      icon = "ranch";
-  } else if ((month == 12 && day >= 22) || (month == 1 && day <= 19)) {
-      icon = "boom";
-  } else if ((month == 1 && day >= 20) || (month == 2 && day <= 19)) {
-      icon = "chunk";
-  } else if ((month == 2 && day >= 20) || (month == 3 && day <= 20)) {
-      icon = "mallow";
-  }
-  showIconDetail(icon)
-};
 
 
 function showIconDetail(icon) {
-    const mainIcon = iconData.filter(
-        bud => bud.name === icon
-    )[0]
-    console.log(mainIcon)
+  console.log("Selected icon:", icon); // Log the icon being passed to the function
+  const mainIcon = iconData.filter(bud => bud.name === icon)[0]; // Use [0] to access the first result
+
+  if (!mainIcon) {
+      console.error("Icon not found:", icon); // Log error if icon is not found
+      console.log("Available icon names:", iconData.map(bud => bud.name)); // Log all the names in iconData
+      return;
+  }
+
+  console.log(mainIcon); // Check the details of the mainIcon
+  iconImage.src = mainIcon.image;
+  iconName.innerText = mainIcon.name;
+  iconIntro.innerText = mainIcon.intro;
+  iconDescrip.innerText = mainIcon.description;
+
+  playsound(mainIcon.sound);
+}
+
+function findBday(month, day) {
+  console.log("Month:", month, "Day:", day); // Log the month and day to check the values
+  if ((month == 3 && day >= 21) || (month == 4 && day <= 20)) {
+      icon = "Margo";
+  } else if ((month == 4 && day >= 21) || (month == 5 && day <= 20)) {
+      icon = "Charlee";
+  } else if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) {
+      icon = "Neon";
+  } else if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) {
+      icon = "Sparkle";
+  } else if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) {
+      icon = "Taglo";
+  } else if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) {
+      icon = "Blup";
+  } else if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) {
+      icon = "Cider";
+  } else if ((month == 10 && day >= 23) || (month == 11 && day <= 22)) {
+      icon = "Pumpkin";
+  } else if ((month == 11 && day >= 23) || (month == 12 && day <= 21)) {
+      icon = "Ranch";
+  } else if ((month == 12 && day >= 22) || (month == 1 && day <= 19)) {
+      icon = "Boom";
+  } else if ((month == 1 && day >= 20) || (month == 2 && day <= 19)) {
+      icon = "Chunk";
+  } else if ((month == 2 && day >= 20) || (month == 3 && day <= 20)) {
+      icon = "Mallow";
+  }
+
+  console.log("Icon set to:", icon); // Log the icon value set
+  showIconDetail(icon);
+}
+
+function showIconDetail(icon) {
+  console.log("Selected icon:", icon); // Check the value of icon being passed
+  const mainIcon = iconData.filter(bud => bud.name === icon)[0]; // Use [0] to access the first result
+
+  if (!mainIcon) {
+      console.error("Icon not found:", icon); // Log error if icon is not found
+      return;
+  }
+    console.log(mainIcon);
     iconImage.src = mainIcon.image;
     iconName.innerText = mainIcon.name;
     iconIntro.innerText = mainIcon.intro;
     iconDescrip.innerText = mainIcon.description;
 
-    playsound(Icon.sound);
+    playsound(mainIcon.sound);
 }
 
 function playsound(sound) {
@@ -114,7 +139,7 @@ const helpButton = document.getElementById('help-button');
 if (helpButton) {
     helpButton.addEventListener('click', () => {
         iconImage.src = 'images/icon.png';
-        iconName.innerText = 'Instruction';
+        iconName.innerText = 'Instructions';
         iconName.style.paddingTop = '1.2rem';
         iconIntro.innerText = 'Welcome to ByteBuds!';
         iconDescrip.innerText = 'Enter your birthday above to find out which ByteBud represents you! You can also explore the buttons on the side to learn about other Buddies and their descriptions.';
@@ -221,3 +246,25 @@ const iconData= [
     }];
   
     
+    function enterBday(event) {
+      event.preventDefault();
+      console.log("Birthday form submitted!"); // ✅ Check if function runs
+  
+      const bday = document.getElementById('bday-input');
+      if (!bday || bday.value.length === 0) {
+          console.log("No birthday input detected."); // ✅ Check if input exists
+          return;
+      }
+  
+      const bdayValue = bday.value.split("-");
+      if (bdayValue.length < 3) {
+          console.log("Invalid date format:", bday.value); // ✅ Check input format
+          return;
+      }
+  
+      month = parseInt(bdayValue[1], 10);
+      day = parseInt(bdayValue[2], 10);
+      console.log("Extracted month:", month, "Extracted day:", day); // ✅ Check extracted values
+  
+      findBday(month, day);
+  }
