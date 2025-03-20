@@ -38,7 +38,7 @@ function findBday(month, day) {
   } else if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) {
       icon = "taglo";
   } else if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) {
-      icon = "blup";
+      icon = "glup";
   } else if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) {
       icon = "cider";
   } else if ((month == 10 && day >= 23) || (month == 11 && day <= 22)) {
@@ -117,7 +117,7 @@ const iconData= [
     {
         name: 'Boom',
         intro: "Capricorn",
-        description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
+        description: "The hardworking and responsible bestie who takes their role seriously. Probably listens well, follows commands, and always knows when it’s time for a snack. A little serious, but deep down, they’re a big softie.",
         image: 'characters/boom.capricornus.png',
         sound: 'sounds/boom.wav',
         id: "boom",
@@ -125,7 +125,7 @@ const iconData= [
     {
         name: 'Chunk',
         intro: "Aquarius",
-        description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
+        description: "They love doing their own thing, sometimes staring off into space, but will randomly come up and give you the biggest, weirdest, most adorable hug.",
         image: 'characters/chunk.aquarius.png',
         sound: 'sounds/chunk.wav',
         id: "chunk",
@@ -133,7 +133,7 @@ const iconData= [
     {
         name: "Mallow",
         intro: "Pisces",
-        description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
+        description: "Loves naps, daydreaming, and being as close to you as possible. They probably give the sweetest, most soulful looks and always sense when you need a little extra love.",
         image: 'characters/mallow.pisces.png',
         sound: 'sounds/mallow.wav',
         id: "mallow",
@@ -141,7 +141,7 @@ const iconData= [
     {
         name: "Margo",
         intro: "Aries",
-        description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
+        description: "Your bold and adventurous bestie! This Bytebud is always ready for action, they’re energetic, fearless, and always up for a challenge",
         image: 'characters/margo.aries.png',
         sound: 'sounds/margo.wav',
         id: "margo",
@@ -149,7 +149,7 @@ const iconData= [
     {
         name: "Charlee",
         intro: "Taurus",
-        description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
+        description: "Loves treats, naps, and sitting right by your side. Stubborn when it comes to getting up, but endlessly loyal and protective. Their love language? Snacks and belly rubs!",
         image: 'characters/charlee.taurus.png',
         sound: 'sounds/charlee.wav',
         id: "charlee",
@@ -157,7 +157,7 @@ const iconData= [
     {
         name: "Neon",
         intro: "Gemini",
-        description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
+        description: "The playful, talkative ByteBud that always keeps things interesting! One second they’re zooming around, the next they’re curling up next to you for a nap",
         image: 'characters/neon.gemini.png',
         sound: 'sounds/neon.wav',
         id: "neon",
@@ -165,7 +165,7 @@ const iconData= [
     {
         name: "Sparkle",
         intro: "Cancer",
-        description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
+        description: "The emotional support bestie who always knows when you need a cuddle. Loves sitting on your lap, following you everywhere, and giving you big, loving eyes. Would rather stay in with you than go outside—pure fluffball of love!",
         image: 'characters/sparkle.cancer.png',
         sound: 'sounds/sparkle.wav',
         id: "sparkle",
@@ -173,23 +173,23 @@ const iconData= [
     {
         name: "Taglo",
         intro: "Leo",
-        description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
+        description: "The sassy, confident ByteBud that struts around like they own the place. Loves attention, posing for pictures, and showing off their best tricks. They’re affectionate, fiercely loyal, and definitely the star of your heart!",
         image: 'characters/taglo.leo.png',
         sound: 'sounds/taglo.wav',
         id: "taglo",
     },
     {
-        name: "Glup",
+        name: "Blup",
         intro: "Virgo",
-        description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
-        image: 'characters/glup.virgo.png',
-        sound: 'sounds/glup.wav',
-        id: "glup",
+        description: "Probably organizes their toys and loves a routine. Super smart, loves learning new things, and always watches over you like a tiny guardian.",
+        image: 'characters/blup.virgo.png',
+        sound: 'sounds/blup.wav',
+        id: "blup",
     },
     {
         name: "Cider",
         intro: "Libra",
-        description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
+        description: "The friendly, charming ByteBud who loves everyone! They just want peace, harmony, and all the love and attention they can get.",
         image: 'characters/cider.libra.png',
         sound: 'sounds/cider.wav',
         id: "cider",
@@ -197,7 +197,7 @@ const iconData= [
     {
         name: "Pumpkin",
         intro: "Scorpio",
-        description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
+        description: "They act independent but secretly want to be your shadow. If you’re their person, they’ll be loyal to the end, with big soulful eyes that say “I love you.”",
         image: 'characters/pumpkin.scorpio.png',
         sound: 'sounds/pumpkin.wav',
         id: "pumpkin",
@@ -205,7 +205,7 @@ const iconData= [
     {
         name: "Ranch",
         intro: "Sagittarius",
-        description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
+        description: "The adventurous, goofy ByteBud that is always on the move. Loves road trips, long walks, and anything exciting. They’ll push you to be more spontaneous and will always be your little explorer buddy!",
         image: 'characters/ranch.sag.png',
         sound: 'sounds/ranch.wav',
         id: "ranch",
