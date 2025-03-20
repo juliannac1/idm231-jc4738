@@ -6,6 +6,22 @@
     color: #000;
 }
 
+h1{
+    text-align: center;
+}
+
+#blindbox-detail {
+    display: flex;
+    flex-direction: column; /* Stacks image and detail-box */
+    align-items: center; /* Centers content horizontally */
+    text-align: center; /* Ensures text inside is centered */
+
+}
+
+#icon-img {
+    position: relative; /* Ensures it's above the detail box */
+    z-index: 10;
+}
 /* #bday-generator styles */
 
 #bday-generator {
@@ -17,7 +33,7 @@
 
 #bday-input {
     background-color: white;
-    color: #A4A4A4;
+    color: #c2aeae;
     border: 3px solid yellow;
 }
 
@@ -53,23 +69,41 @@ body{
     background: url('images/wall.jpg') no-repeat center center fixed;
     background-size: cover;
 }
-#row-1 {
-    border-bottom: 20px solid rgb(207, 5, 5); /* Creates a red line under row 1 */
+
+/*red line styles */
+#row-1, #row-2, #row-3 {
+    position: relative; /* Ensure that child elements can be positioned relative to this container */
+    padding-bottom: 10px; /* Add space below the buttons so they overlap the line */
+    min-height: 50px; /* Ensure there is enough height for the red line to appear */
 }
+
+#row-1 hr, #row-2 hr, #row-3 hr {
+    position: absolute; /* Position the red line relative to each row */
+    bottom: 0; /* Position it at the bottom of the container */
+    left: 0;
+    width: 100%; /* Make the line span the entire width of the container */
+    height: 30px; /* Set the height of the red line */
+    background-color: rgb(208, 39, 24); /* Set the color of the line */
+    z-index: -5; /* Place the line behind the buttons */
+}
+
 
 button{
     border: none;
     background: none;
+    z-index: 10;
 }
 
 img{
     height: 150px;
     width: auto;
-    margin : auto;
+    margin: none;
+    padding: none;
 }
 
 .left{
     flex: 3;
+    margin: 0 100px;
     max-width: 60% ;
     text-align: center;
     display: grid;
@@ -78,14 +112,17 @@ img{
 
 .right{
     flex: 1;
-
+    padding: 20px;
+    border-style: outset;
+    border-color: #c2aeae;
+    background-color: #f6f0f0;
     text-align: center;
     display: block;
     flex: 1; /* Allows it to adjust dynamically */
 }
 
 #icon-detail {
-    margin: 0 70px;
+    margin: 0px 70px;
     /* width: auto; */
 }
 
@@ -95,11 +132,12 @@ button {
 }
 
 #detail-box {
-    background-color: rgb(217, 205, 178);
+    background-color: rgb(222, 210, 201);
     border-radius: 30px;
     width: 32rem;
+    height: fit-content;
     padding: 4rem 2rem 1rem 2rem;
-    margin-top: -80px;
+    z-index: 0;
 }
 
 
@@ -107,7 +145,8 @@ button {
     width: auto;
     max-height: 250px;
     display: block;
-    margin: auto;
+    margin: 20px;
+    z-index: 0;
 }
 
 #help-button {

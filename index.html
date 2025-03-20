@@ -2,8 +2,8 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initl-scale=1.0">
-        <title> AI friend generator </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Zodiac ByteBuds </title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
@@ -12,11 +12,11 @@
                 <img id="help-button-img" src="images/help.png" alt="help icon">
             </button>
         </header>
+
         <main>
             <div class="main">
                 <div class="left" style="display: grid;">
-                    <div id="row-1">
-                        
+                    <div id="row-1">                      
                         <button class="icon-button" id="boom">
                             <img src="characters/boom.capricornus.png"  alt="Boom">
                         </button>
@@ -29,10 +29,10 @@
                         <button class="icon-button" id="margo">
                             <img src="characters/margo.aries.png" alt="Margo">
                         </button>
-                    </div>
-            
-                    <div id="row-2">
                         <hr>
+                    </div>
+                    
+                    <div id="row-2">                  
                         <button class="icon-button" id="charlee">
                             <img src="characters/charlee.taurus.png"  alt="Charlee">
                         </button>
@@ -45,8 +45,9 @@
                         <button class="icon-button" id="taglo">
                             <img src="characters/taglo.leo.png"  alt="Taglo">
                         </button>
+                        <hr>
                     </div>
-                    <hr class="red-line">
+                    
                     <div id="row-3">
                         <button class="icon-button" id="blup">
                             <img src="characters/blup.virgo.png"  alt="Blup">
@@ -60,7 +61,7 @@
                         <button class="icon-button" id="ranch">
                             <img src="characters/ranch.sag.png" alt="Ranch">
                         </button>
-                       
+                        <hr>
                     </div>
                     
                 </div>
@@ -69,6 +70,7 @@
                         <!--pop up button add the image-->
                        <img class="popup" onclick="helpMe()" src="" >
                     </div> 
+                    <h1> Zodiac ByteBuds</h1>
                     <div class="dob">
                         <section>
                             <form class="birthday-form">
@@ -92,6 +94,25 @@
             </div>
         
         </div>
+        <div id="overlayContainer">
+            <div class="overlay">
+                <div class="text">
+                    <h2>Instructions</h2>
+                    <div class="close">
+                        <h1>X</h1>
+                    </div>
+                    <div class="text">
+                        <p>Enter your birthday above to find out which ByteBud represents you! You can also explore the buttons on the side to learn about other Buddies and their descriptions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section>
+            <p>
+                Byte buddies are uniquely crafted by Julianna with the use of LumaAI.
+            </p>
+            <audio id="audioplayer"></audio>
+        </section>
         </main>
         <script src="main.js"></script>
         

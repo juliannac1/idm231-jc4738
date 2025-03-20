@@ -1,11 +1,3 @@
-let icon ="";
-let month = "";
-let day = "";
-
-const iconImage = document.getElementById("icon_img");
-const iconName = document.getElementById("icon_name");
-const iconIntro = document.getElementById("icon_intro");
-const iconDescrip = document.getElementById("description");
 
 function enterBday(event) {
     event.preventDefault();
@@ -24,34 +16,33 @@ if (form) {
     console.log('no form found')
 }
 
-function findBday(month, day) {
-    if ((month == 3 && day >= 21) || (month == 4 && day <= 20)) {
-        icon = "margo";
-    } else if ((month == 4 && day >= 21) || (month == 5 && day <= 20)) {
-        icon = "charlee";
-    } else if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) {
-        icon = "neon";
-    } else if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) {
-        icon = "sparkle";
-    } else if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) {
-        icon = "taglo";
-    } else if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) {
-        icon = "blup";
-    } else if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) {
-        icon = "cider";
-    } else if ((month == 10 && day >= 23) || (month == 11 && day <= 22)) {
-        icon = "pumpkin";
-    } else if ((month == 11 && day >= 23) || (month == 12 && day <= 21)) {
-        icon = "ranch";
-    } else if ((month == 12 && day >= 22) || (month == 1 && day <= 19)) {
-        icon = "boom";
-    } else if ((month == 1 && day >= 20) || (month == 2 && day <= 19)) {
-        icon = "chunk";
-    } else if ((month == 2 && day >= 20) || (month == 3 && day <= 20)) {
-        icon = "mallow";
-    }
-    showIconDetail(icon)
-};
+function getZodiac(month, day) {
+    if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) {
+      return 'Capricorn';
+    } else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) {
+      return 'Sagittarius';
+    } else if ((month === 10 && day >= 24) || (month === 11 && day <= 21)) {
+      return 'Scorpio';
+    } else if ((month === 9 && day >= 23) || (month === 10 && day <= 23)) {
+      return 'Libra';
+    } else if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) {
+      return 'Virgo';
+    } else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) {
+      return 'Leo';
+    } else if ((month === 6 && day >= 22) || (month === 7 && day <= 22)) {
+      return 'Cancer';
+    } else if ((month === 5 && day >= 21) || (month === 6 && day <= 21)) {
+      return 'Gemini';
+    } else if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) {
+      return 'Taurus';
+    } else if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) {
+      return 'Aries';
+    } else if ((month === 2 && day >= 19) || (month === 3 && day <= 20)) {
+      return 'Pisces';
+    } else if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) {
+      return 'Aquarius';
+    } else return null;
+  }
 
 function showIconDetail(icon) {
     const icon = iconData.filter(
@@ -73,21 +64,16 @@ for (const button of iconButton) {
     }, false);
 }
 
-function showClickedIcon(button) {
-    const icon = button.id;
-    const mainIcon = iconData.filter(
-        item => item.id === icon
-    )[0]
-    console.log(mainicon)
-    dishImage.src = mainIcon.image;
-    dishName.innerText = mainIcon.name;
-    dishIntro.innerText = mainIcon.intro;
-    dishDescrip.innerText = mainIcon.description;
-
-    playsound(mainIcon.sound);
+function getInfo(zodiac) {
+    for (let icon of icons) {
+        if (icon.zodiac == zodiac) {
+            let info = [icon.name, icon.intro, icon.image, icon.sound, album.descrip];
+            return info;
+        }
+    }
 }
 
-const iconData = [
+const icons= [
     {
         name: 'Boom',
         intro: "Capricorn",
@@ -98,7 +84,7 @@ const iconData = [
     },
     {
         name: 'Chunk',
-        intro: "Capricorn",
+        intro: "Aquarius",
         description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
         image: 'characters/chunk.png',
         sound: 'sounds/chunk.wav',
@@ -106,7 +92,7 @@ const iconData = [
     },
     {
         name: "Mallow",
-        intro: "Capricorn",
+        intro: "Pisces",
         description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
         image: 'characters/mallow.png',
         sound: 'sounds/mallow.wav',
@@ -114,7 +100,7 @@ const iconData = [
     },
     {
         name: "Margo",
-        intro: "Capricorn",
+        intro: "Aries",
         description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
         image: 'characters/margo.png',
         sound: 'sounds/margo.wav',
@@ -122,7 +108,7 @@ const iconData = [
     },
     {
         name: "Charlee",
-        intro: "Capricorn",
+        intro: "Taurus",
         description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
         image: 'characters/charlee.png',
         sound: 'sounds/charlee.wav',
@@ -130,7 +116,7 @@ const iconData = [
     },
     {
         name: "Neon",
-        intro: "Capricorn",
+        intro: "Gemini",
         description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
         image: 'characters/neon.png',
         sound: 'sounds/neon.wav',
@@ -138,7 +124,7 @@ const iconData = [
     },
     {
         name: "Sparkle",
-        intro: "Capricorn",
+        intro: "Cancer",
         description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
         image: 'characters/sparkle.png',
         sound: 'sounds/sparkle.wav',
@@ -146,7 +132,7 @@ const iconData = [
     },
     {
         name: "Taglo",
-        intro: "Capricorn",
+        intro: "Leo",
         description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
         image: 'characters/taglo.png',
         sound: 'sounds/taglo.wav',
@@ -154,7 +140,7 @@ const iconData = [
     },
     {
         name: "Glup",
-        intro: "Capricorn",
+        intro: "Virgo",
         description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
         image: 'characters/glup.png',
         sound: 'sounds/glup.wav',
@@ -162,7 +148,7 @@ const iconData = [
     },
     {
         name: "Cider",
-        intro: "Capricorn",
+        intro: "Libra",
         description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
         image: 'characters/cider.png',
         sound: 'sounds/cider.wav',
@@ -170,7 +156,7 @@ const iconData = [
     },
     {
         name: "Pumpkin",
-        intro: "Capricorn",
+        intro: "Scorpio",
         description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
         image: 'characters/pumpkin.png',
         sound: 'sounds/pumpkin.wav',
@@ -178,17 +164,18 @@ const iconData = [
     },
     {
         name: "Ranch",
-        intro: "Capricorn",
+        intro: "Sagittarius",
         description: "You are friendly and outgoing, known as 'the diplomat' in your friend group. You are good at debating and public speaking. You are a wonderful story teller - it's hard to get distracted when listening to you!",
         image: 'characters/ranch.png',
         sound: 'sounds/ranch.wav',
         id: "ranch",
     }];
     
-
+    
 
     const helpButton = document.getElementById('help-button');
-
+    const help_container = document.querySelector('#help-container');
+   
     if (helpButton) {
         helpButton.addEventListener('click', () => {
             iconImage.src = 'image-asset/icon-mainicon.png';
@@ -198,3 +185,19 @@ const iconData = [
             descrip.innerText = 'Enter your birthday above to discover whichicon is your new friend! You can also click on buttons on the side to read about other icons and corresponding characters.';
         }, false);
     }
+
+    const help_close_btn = document.querySelector('.help-close-button')
+
+if (help_close_btn) {}
+  help_close_btn.addEventListener ('click', () => {
+    if (help_container.style.display === 'flex') {
+      help_container.style.display = 'none';
+}})
+
+    const overlay = document.createElement('div');
+    overlay.className = 'overlay';
+
+    if (form) {
+        form.addEventListener('submit', handle_submit);
+      } 
+      
